@@ -1,13 +1,16 @@
 import Head from 'next/head';
-import Image from 'next/image';
-import { Inter } from 'next/font/google';
-import styles from '@/styles/Home.module.css';
 import { Container } from '@/Components/Container';
-import Typography from '@/Components/Typography/Typography';
-
-const inter = Inter({ subsets: ['latin'] });
+import { Typography } from '@/Components/Typography';
+import { Input } from '@/Components/Input';
+import { useForm } from 'react-hook-form';
 
 export default function Home() {
+  const { register, handleSubmit } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data);
+  };
+
   return (
     <>
       <Head>
@@ -32,6 +35,13 @@ export default function Home() {
         flexDirection="column"
       >
         <Typography as="h1">Test</Typography>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <Input
+            type="text"
+            placeholder="Name"
+            {...register('email')}
+          />
+        </form>
       </Container>
     </>
   );
