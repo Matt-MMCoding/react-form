@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { Inter } from 'next/font/google';
 import styles from '@/styles/Home.module.css';
 import { Container } from '@/Components/Container';
+import Typography from '@/Components/Typography/Typography';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -30,7 +31,7 @@ export default function Home() {
         height="100vh"
         flexDirection="column"
       >
-        <h1>Test</h1>
+        <Typography as="h1">Test</Typography>
       </Container>
     </>
   );
