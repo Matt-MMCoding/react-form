@@ -7,6 +7,8 @@ const Container = forwardRef<HTMLDivElement, IContainerProps>(
     {
       display = 'flex',
       flexDirection = 'row',
+      alignItems,
+      justifyContent,
       width,
       height,
       backgroundColor = 'inherit',
@@ -20,6 +22,8 @@ const Container = forwardRef<HTMLDivElement, IContainerProps>(
       <StyledContainer
         $display={display}
         $flexDirection={flexDirection}
+        $alignItems={alignItems}
+        $justifyContent={justifyContent}
         $width={width}
         $height={height}
         $backgroundColor={backgroundColor}

@@ -4,7 +4,13 @@ import { CSSProperties } from 'styled-components';
 
 type ContainerCssProps = Pick<
   CSSProperties,
-  'display' | 'flexDirection' | 'width' | 'height' | 'backgroundColor'
+  | 'display'
+  | 'flexDirection'
+  | 'alignItems'
+  | 'justifyContent'
+  | 'width'
+  | 'height'
+  | 'backgroundColor'
 >;
 
 interface IContainerStyleProps extends ContainerCssProps {}
