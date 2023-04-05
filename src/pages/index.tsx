@@ -3,6 +3,7 @@ import { Container } from '@/Components/Container';
 import { Typography } from '@/Components/Typography';
 import { Input } from '@/Components/Input';
 import { useForm } from 'react-hook-form';
+import { Button } from '@/Components/Button';
 
 export default function Home() {
   const { register, handleSubmit } = useForm();
@@ -41,6 +42,7 @@ export default function Home() {
             placeholder="Name"
             {...register('email')}
           />
+          <Button>My button</Button>
         </form>
       </Container>
     </>
