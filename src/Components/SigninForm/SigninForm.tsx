@@ -20,14 +20,21 @@ const SigninForm: FC<ISigninFormProps> = () => {
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Input
           type="email"
+          placeholder="Email"
           {...register('email')}
         />
         <Input
           type="password"
+          placeholder="Password"
           {...register('password')}
         />
-        <Button onClick={handleSubmit(onSubmit)}>Sign in</Button>
       </Form>
+      <Button
+        width="50%"
+        onClick={handleSubmit(onSubmit)}
+      >
+        Sign in
+      </Button>
     </StyledContainer>
   );
 };
