@@ -14,7 +14,12 @@ const FormSelector: FC<IFormSelectorProps> = ({
     <StyledContainer>
       <Typography as="h3">{heading}</Typography>
       <Typography>{subheading}</Typography>
-      <Button onClick={handleButtonClick}>{cta}</Button>
+      <Button
+        width="50%"
+        onClick={handleButtonClick}
+      >
+        {cta}
+      </Button>
     </StyledContainer>
   );
 };
