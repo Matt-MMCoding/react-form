@@ -9,6 +9,7 @@ export const StyledContainer = styled.div<IStyledContainerProps>`
     $flex,
     $alignItems,
     $justifyContent,
+    $gridTemplateColumns,
     $width,
     $height,
     $color,
@@ -20,6 +21,7 @@ export const StyledContainer = styled.div<IStyledContainerProps>`
     flex: ${$flex};
     align-items: ${$alignItems};
     justify-content: ${$justifyContent};
+    grid-template-columns: ${$gridTemplateColumns};
     width: ${$width};
     height: ${$height};
     color: ${$color};

@@ -8,6 +8,7 @@ const Input = forwardRef<HTMLInputElement, IInputProps>(
       <StyledContainer
         $disabled={disabled}
         $validationState={validationState}
+        width="70%"
       >
         <StyledInput
           ref={ref}

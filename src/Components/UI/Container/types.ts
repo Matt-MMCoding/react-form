@@ -10,6 +10,7 @@ type ContainerCssProps = Pick<
   | 'flex'
   | 'alignItems'
   | 'justifyContent'
+  | 'gridTemplateColumns'
   | 'width'
   | 'height'
   | 'color'

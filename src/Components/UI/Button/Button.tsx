@@ -7,8 +7,8 @@ const Button = forwardRef<HTMLButtonElement, IButtonProps>(
   (
     {
       width,
-      padding,
-      backgroundColor,
+      padding = '8px 0',
+      backgroundColor = '#22a6b3',
       as = 'button',
       disabled = false,
       children,

@@ -11,6 +11,7 @@ const Container = forwardRef<HTMLDivElement, IContainerProps>(
       flex,
       alignItems,
       justifyContent,
+      gridTemplateColumns = 0,
       width,
       height,
       color,
@@ -29,6 +30,7 @@ const Container = forwardRef<HTMLDivElement, IContainerProps>(
         $flex={flex}
         $alignItems={alignItems}
         $justifyContent={justifyContent}
+        $gridTemplateColumns={gridTemplateColumns}
         $width={width}
         $height={height}
         $color={color}

@@ -7,5 +7,8 @@ export const StyledButton = styled.button<IStyledButtonProps>`
     padding: ${$padding};
     background-color: ${$backgroundColor};
     cursor: pointer;
+    border: none;
+    border-radius: 1.5rem;
+    align-self: center;
   `}
 `;
