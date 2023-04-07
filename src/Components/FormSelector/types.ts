@@ -1,3 +1,8 @@
-import { PropsWithChildren } from 'react';
+import { MouseEventHandler } from 'react';
 
-export interface IFormSelectorProps extends PropsWithChildren {}
+export interface IFormSelectorProps {
+  heading: string;
+  subheading: string;
+  cta: string;
+  handleButtonClick: MouseEventHandler;
+}
