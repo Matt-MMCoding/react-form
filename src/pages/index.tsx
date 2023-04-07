@@ -1,11 +1,18 @@
 import Head from 'next/head';
-import { Container } from '@/Components/Container';
-import { Typography } from '@/Components/Typography';
-import { Input } from '@/Components/Input';
+import { Container } from '@/Components/UI/Container';
 import { useForm } from 'react-hook-form';
-import { Button } from '@/Components/Button';
+import { StyledWrapper } from '@/styles/Home.styles';
+import journeyIllustration from '../../public/images/journey_illustration.jpg';
+import Image from 'next/image';
+import { SignupForm } from '@/Components/SignupForm';
+import { FormSelector } from '@/Components/FormSelector';
+import { useState } from 'react';
+import { Typography } from '@/Components/UI/Typography';
+import { Button } from '@/Components/UI/Button';
+import { SigninForm } from '@/Components/SigninForm';
 
 export default function Home() {
+  const [signupView, setSignupView] = useState(false);
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
@@ -29,22 +36,41 @@ export default function Home() {
           href="/favicon.ico"
         />
       </Head>
-      <Container
-        as="main"
-        width="100vw"
-        height="100vh"
-        flexDirection="column"
-      >
-        <Typography as="h1">Test</Typography>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <Input
-            type="text"
-            placeholder="Name"
-            {...register('email')}
+      <StyledWrapper as="main">
+        <Container height="40vh">
+          <Image
+            alt="Image by vectorpocket on Freepik"
+            src={journeyIllustration}
+            fill
+            style={{
+              objectFit: 'cover',
+              borderRadius: '8px',
+              zIndex: '1',
+            }}
           />
-          <Button>My button</Button>
-        </form>
-      </Container>
+          {signupView ? <SignupForm /> : <SigninForm />}
+          {signupView ? (
+            <FormSelector>
+              <Typography as="h3">Already have an account?</Typography>
+              <Typography>Sign in to continue your journey</Typography>
+              <Button onClick={() => setSignupView((prev) => !prev)}>
+                Sign in
+              </Button>
+            </FormSelector>
+          ) : (
+            <FormSelector>
+              <Typography as="h3">Start your journey now</Typography>
+              <Typography>
+                Don&apos;t have an account yet? Join us now and start your
+                journey today!
+              </Typography>
+              <Button onClick={() => setSignupView((prev) => !prev)}>
+                Sign up
+              </Button>
+            </FormSelector>
+          )}
+        </Container>
+      </StyledWrapper>
     </>
   );
 }

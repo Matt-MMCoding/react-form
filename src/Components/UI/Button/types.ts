@@ -1,5 +1,10 @@
 import { StyledTransientProps } from '@/types';
-import { ButtonHTMLAttributes, ElementType, PropsWithChildren } from 'react';
+import {
+  ButtonHTMLAttributes,
+  ElementType,
+  MouseEventHandler,
+  PropsWithChildren,
+} from 'react';
 import { CSSProperties } from 'styled-components';
 
 type ButtonCssProps = Pick<
@@ -15,4 +20,5 @@ export interface IStyledButtonProps
 export interface IButtonProps extends PropsWithChildren<IBaseButtonProps> {
   as?: ElementType;
   disabled?: boolean;
+  onClick?: MouseEventHandler;
 }

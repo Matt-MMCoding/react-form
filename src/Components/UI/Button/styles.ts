@@ -6,5 +6,6 @@ export const StyledButton = styled.button<IStyledButtonProps>`
     width: ${$width};
     padding: ${$padding};
     background-color: ${$backgroundColor};
+    cursor: pointer;
   `}
 `;

@@ -5,12 +5,15 @@ import { StyledContainer } from './styles';
 const Container = forwardRef<HTMLDivElement, IContainerProps>(
   (
     {
+      position = 'relative',
       display = 'flex',
       flexDirection = 'row',
+      flex,
       alignItems,
       justifyContent,
       width,
       height,
+      color,
       backgroundColor = 'inherit',
       as,
       children,
@@ -20,12 +23,15 @@ const Container = forwardRef<HTMLDivElement, IContainerProps>(
   ) => {
     return (
       <StyledContainer
+        $position={position}
         $display={display}
         $flexDirection={flexDirection}
+        $flex={flex}
         $alignItems={alignItems}
         $justifyContent={justifyContent}
         $width={width}
         $height={height}
+        $color={color}
         $backgroundColor={backgroundColor}
         ref={ref}
         as={as}

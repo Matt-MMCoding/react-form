@@ -4,12 +4,15 @@ import { CSSProperties } from 'styled-components';
 
 type ContainerCssProps = Pick<
   CSSProperties,
+  | 'position'
   | 'display'
   | 'flexDirection'
+  | 'flex'
   | 'alignItems'
   | 'justifyContent'
   | 'width'
   | 'height'
+  | 'color'
   | 'backgroundColor'
 >;
 
