@@ -7,7 +7,8 @@ export const StyledContainer = styled(Container)`
   flex: 1;
   justify-content: center;
   align-items: center;
-  z-index: 3;
+  gap: 1.5rem;
   background: #fff;
   color: #000;
+  border-radius: 8px 0 0 8px;
 `;

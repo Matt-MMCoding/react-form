@@ -16,22 +16,24 @@ const SignupForm: FC<ISigninFormProps> = () => {
 
   return (
     <StyledContainer>
-      <Typography>Start your jounrney!</Typography>
+      <Typography>Welcome back!</Typography>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Input
           type="email"
+          placeholder="Email"
           {...register('email')}
         />
         <Input
           type="password"
+          placeholder="Password"
           {...register('password')}
         />
       </Form>
       <Button
-        width="80%"
+        width="50%"
         onClick={handleSubmit(onSubmit)}
       >
-        Sign up
+        Sign in
       </Button>
     </StyledContainer>
   );
