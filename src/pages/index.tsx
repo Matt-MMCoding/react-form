@@ -52,19 +52,20 @@ export default function Home() {
               objectFit: 'cover',
               borderRadius: '8px',
               filter: 'brightness(60%)',
+              zIndex: 1,
             }}
           />
           <motion.div
             layout
             transition={spring}
-            style={{ order: signupView ? 2 : 1 }}
+            style={{ order: signupView ? 2 : 1, zIndex: 3 }}
           >
             {signupView ? <SignupForm /> : <SigninForm />}
           </motion.div>
           <motion.div
             layout
             transition={spring}
-            style={{ order: signupView ? 1 : 2 }}
+            style={{ order: signupView ? 1 : 2, zIndex: 3 }}
           >
             {signupView ? (
               <FormSelector
