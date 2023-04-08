@@ -8,9 +8,16 @@ import { FormSelector } from '@/Components/FormSelector';
 import { useState } from 'react';
 import { SigninForm } from '@/Components/SigninForm';
 import { SIGNIN, SIGNUP } from '@/Constants/FormSelectors';
+import { motion } from 'framer-motion';
 
 export default function Home() {
   const [signupView, setSignupView] = useState(false);
+
+  const spring = {
+    type: 'spring',
+    stiffness: 900,
+    damping: 100,
+  };
 
   return (
     <>
@@ -35,7 +42,7 @@ export default function Home() {
           height="60vh"
           display="grid"
           gridTemplateColumns="1fr 1fr"
-          backgroundColor="rgba(0, 0, 0, 0.5)"
+          borderRadius="8px"
         >
           <Image
             alt="Image by vectorpocket on Freepik"
@@ -44,25 +51,37 @@ export default function Home() {
             style={{
               objectFit: 'cover',
               borderRadius: '8px',
-              zIndex: '1',
+              filter: 'brightness(60%)',
             }}
           />
-          {signupView ? <SignupForm /> : <SigninForm />}
-          {signupView ? (
-            <FormSelector
-              heading={SIGNIN.HEADING}
-              subheading={SIGNIN.SUBHEADING}
-              cta={SIGNIN.CTA}
-              handleButtonClick={() => setSignupView((prev) => !prev)}
-            />
-          ) : (
-            <FormSelector
-              heading={SIGNUP.HEADING}
-              subheading={SIGNUP.SUBHEADING}
-              cta={SIGNUP.CTA}
-              handleButtonClick={() => setSignupView((prev) => !prev)}
-            />
-          )}
+          <motion.div
+            layout
+            transition={spring}
+            style={{ order: signupView ? 2 : 1 }}
+          >
+            {signupView ? <SignupForm /> : <SigninForm />}
+          </motion.div>
+          <motion.div
+            layout
+            transition={spring}
+            style={{ order: signupView ? 1 : 2 }}
+          >
+            {signupView ? (
+              <FormSelector
+                heading={SIGNIN.HEADING}
+                subheading={SIGNIN.SUBHEADING}
+                cta={SIGNIN.CTA}
+                handleButtonClick={() => setSignupView((prev) => !prev)}
+              />
+            ) : (
+              <FormSelector
+                heading={SIGNUP.HEADING}
+                subheading={SIGNUP.SUBHEADING}
+                cta={SIGNUP.CTA}
+                handleButtonClick={() => setSignupView((prev) => !prev)}
+              />
+            )}
+          </motion.div>
         </Container>
       </StyledWrapper>
     </>

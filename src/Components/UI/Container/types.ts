@@ -11,10 +11,13 @@ type ContainerCssProps = Pick<
   | 'alignItems'
   | 'justifyContent'
   | 'gridTemplateColumns'
+  | 'gridTemplateRows'
+  | 'order'
   | 'width'
   | 'height'
   | 'color'
   | 'backgroundColor'
+  | 'borderRadius'
 >;
 
 interface IContainerStyleProps extends ContainerCssProps {}

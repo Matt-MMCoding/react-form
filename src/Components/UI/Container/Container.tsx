@@ -12,10 +12,13 @@ const Container = forwardRef<HTMLDivElement, IContainerProps>(
       alignItems,
       justifyContent,
       gridTemplateColumns = 0,
+      gridTemplateRows = '1fr',
+      order = 1,
       width,
       height,
       color,
       backgroundColor = 'inherit',
+      borderRadius,
       as,
       children,
       ...rest
@@ -31,10 +34,13 @@ const Container = forwardRef<HTMLDivElement, IContainerProps>(
         $alignItems={alignItems}
         $justifyContent={justifyContent}
         $gridTemplateColumns={gridTemplateColumns}
+        $gridTemplateRows={gridTemplateRows}
+        $order={order}
         $width={width}
         $height={height}
         $color={color}
         $backgroundColor={backgroundColor}
+        $borderRadius={borderRadius}
         ref={ref}
         as={as}
         {...rest}

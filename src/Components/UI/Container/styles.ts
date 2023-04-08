@@ -10,11 +10,16 @@ export const StyledContainer = styled.div<IStyledContainerProps>`
     $alignItems,
     $justifyContent,
     $gridTemplateColumns,
+    $gridTemplateRows,
+    $order,
     $width,
     $height,
     $color,
     $backgroundColor,
+    $borderRadius,
   }) => css`
+    overflow: hidden;
+    grid-template-rows: ${$gridTemplateRows};
     position: ${$position};
     display: ${$display};
     flex-direction: ${$flexDirection};
@@ -22,9 +27,11 @@ export const StyledContainer = styled.div<IStyledContainerProps>`
     align-items: ${$alignItems};
     justify-content: ${$justifyContent};
     grid-template-columns: ${$gridTemplateColumns};
+    order: ${$order};
     width: ${$width};
     height: ${$height};
     color: ${$color};
     background-color: ${$backgroundColor};
+    border-radius: ${$borderRadius};
   `}
 `;

@@ -26,13 +26,13 @@ const SignupForm: FC<ISigninFormProps> = () => {
           type="password"
           {...register('password')}
         />
-        <Button
-          width="80%"
-          onClick={handleSubmit(onSubmit)}
-        >
-          Sign up
-        </Button>
       </Form>
+      <Button
+        width="80%"
+        onClick={handleSubmit(onSubmit)}
+      >
+        Sign up
+      </Button>
     </StyledContainer>
   );
 };

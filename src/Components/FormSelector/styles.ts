@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Container } from '@/Components/UI/Container';
 
 export const StyledContainer = styled(Container)`
+  height: 100%;
   z-index: 3;
   flex: 1;
   flex-direction: column;
