@@ -39,7 +39,7 @@ export default function Home() {
       <StyledWrapper as="main">
         <Container
           width="40vw"
-          height="60vh"
+          height="40vh"
           display="grid"
           gridTemplateColumns="1fr 1fr"
           borderRadius="8px"
