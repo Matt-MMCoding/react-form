@@ -11,7 +11,7 @@ const Container = forwardRef<HTMLDivElement, IContainerProps>(
       flex,
       alignItems,
       justifyContent,
-      gridTemplateColumns = 0,
+      gridTemplateColumns = '1fr',
       gridTemplateRows = '1fr',
       order = 1,
       width,
