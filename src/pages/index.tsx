@@ -58,7 +58,10 @@ export default function Home() {
           <motion.div
             layout
             transition={spring}
-            style={{ order: signupView ? 2 : 1, zIndex: 3 }}
+            style={{
+              order: signupView ? 2 : 1,
+              zIndex: 3,
+            }}
           >
             {signupView ? <SignupForm /> : <SigninForm />}
           </motion.div>

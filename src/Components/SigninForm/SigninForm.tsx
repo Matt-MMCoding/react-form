@@ -1,6 +1,8 @@
 import { FC } from 'react';
 import { ISigninFormProps, SignInFormData } from './types';
 import { useForm, SubmitHandler } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as Yup from 'yup';
 import { Input } from '@/Components/UI/Input';
 import { Button } from '@/Components/UI/Button';
 import { StyledContainer } from './styles';
@@ -9,10 +11,23 @@ import { Typography } from '@/Components/UI/Typography';
 import { SIGNIN } from '@/Constants/Forms';
 
 const SigninForm: FC<ISigninFormProps> = () => {
-  const { register, handleSubmit } = useForm<SignInFormData>();
+  const validationSchema = Yup.object().shape({
+    email: Yup.string().required('Email is required').email('Email is invalid'),
+    password: Yup.string().required('Password is required'),
+  });
+  const formOptions = { resolver: yupResolver(validationSchema) };
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitSuccessful },
+  } = useForm<SignInFormData>(formOptions);
 
   const onSubmit: SubmitHandler<SignInFormData> = (data) => {
-    console.log(data);
+    if (isSubmitSuccessful) {
+      reset();
+    }
   };
 
   return (
@@ -22,13 +37,15 @@ const SigninForm: FC<ISigninFormProps> = () => {
         <Input
           type="email"
           placeholder="Email"
-          {...register('email')}
+          {...register('email', { required: true })}
         />
+        {errors.email?.message}
         <Input
           type="password"
           placeholder="Password"
-          {...register('password')}
+          {...register('password', { required: true })}
         />
+        {errors.password?.message}
         <Button
           width="50%"
           onClick={handleSubmit(onSubmit)}
