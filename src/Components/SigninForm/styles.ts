@@ -4,7 +4,6 @@ import { Container } from '@/Components/UI/Container';
 export const StyledContainer = styled(Container)`
   height: 100%;
   flex-direction: column;
-  flex: 1;
   justify-content: center;
   align-items: center;
   gap: 1.5rem;

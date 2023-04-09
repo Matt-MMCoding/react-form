@@ -5,7 +5,8 @@ import { Input } from '@/Components/UI/Input';
 import { Button } from '@/Components/UI/Button';
 import { StyledContainer } from './styles';
 import { Form } from '@/Components/UI/Form';
-import { Typography } from '../UI/Typography';
+import { Typography } from '@/Components/UI/Typography';
+import { SIGNUP } from '@/Constants/Forms';
 
 const SignupForm: FC<ISigninFormProps> = () => {
   const { register, handleSubmit } = useForm();
@@ -16,7 +17,7 @@ const SignupForm: FC<ISigninFormProps> = () => {
 
   return (
     <StyledContainer>
-      <Typography>Welcome back!</Typography>
+      <Typography>{SIGNUP.HEADING}</Typography>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Input
           type="email"
@@ -33,7 +34,7 @@ const SignupForm: FC<ISigninFormProps> = () => {
         width="50%"
         onClick={handleSubmit(onSubmit)}
       >
-        Sign in
+        {SIGNUP.CTA}
       </Button>
     </StyledContainer>
   );

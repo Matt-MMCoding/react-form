@@ -1,22 +1,23 @@
 import { FC } from 'react';
-import { ISigninFormProps } from './types';
-import { useForm } from 'react-hook-form';
+import { ISigninFormProps, SignInFormData } from './types';
+import { useForm, SubmitHandler } from 'react-hook-form';
 import { Input } from '@/Components/UI/Input';
 import { Button } from '@/Components/UI/Button';
 import { StyledContainer } from './styles';
 import { Form } from '@/Components/UI/Form';
-import { Typography } from '../UI/Typography';
+import { Typography } from '@/Components/UI/Typography';
+import { SIGNIN } from '@/Constants/Forms';
 
 const SigninForm: FC<ISigninFormProps> = () => {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm<SignInFormData>();
 
-  const onSubmit = (data) => {
+  const onSubmit: SubmitHandler<SignInFormData> = (data) => {
     console.log(data);
   };
 
   return (
     <StyledContainer>
-      <Typography>Welcome back!</Typography>
+      <Typography>{SIGNIN.HEADING}</Typography>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Input
           type="email"
@@ -28,13 +29,13 @@ const SigninForm: FC<ISigninFormProps> = () => {
           placeholder="Password"
           {...register('password')}
         />
+        <Button
+          width="50%"
+          onClick={handleSubmit(onSubmit)}
+        >
+          {SIGNIN.CTA}
+        </Button>
       </Form>
-      <Button
-        width="50%"
-        onClick={handleSubmit(onSubmit)}
-      >
-        Sign in
-      </Button>
     </StyledContainer>
   );
 };
